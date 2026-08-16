@@ -26,22 +26,24 @@ function App() {
   }, []);
 
   const pokemonList = kantoPokemon.map(pokemon => {
-    console.log(pokemon.types)
     const pokeTypes = pokemon.types.map(typeInfo => {
+      const capTypeName = typeInfo.type.name.charAt(0).toUpperCase() + typeInfo.type.name.slice(1);
       return (
-        <span key={typeInfo.type.name} className={`pokemon-type ${typeInfo.type.name}`}>
-          {typeInfo.type.name}
+        <span key={capTypeName} className={`pokemon-type ${typeInfo.type.name}`}>
+          {capTypeName}
         </span>
       )
     })
 
+    const capName = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+
     return (
       <div key={pokemon.id} className="pokemon-card">
-        <p>#{pokemon.id} {pokemon.name}</p>
+        <p>#{pokemon.id} {capName}</p>
         <div className="pokemon-image">
-          <img src={pokemon.image} alt={pokemon.name} width="" height="" />
+          <img src={pokemon.image} alt={capName} width="" height="" />
         </div>
-        <p>Type(s): {pokeTypes}</p>
+        <p>Type(s): <span className="pokemon-types">{pokeTypes}</span></p>
       </div>
     )
   })
@@ -49,7 +51,7 @@ function App() {
   return (
     <main>
       <h1>Pokedex - Kanto</h1>
-      <section>
+      <section className="pokemon-cards">
         {pokemonList}
       </section>
     </main>
