@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [kantoPokemon, setKantoPokemon] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(20);
 
   useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon/?limit=151&offset=0')
@@ -25,7 +26,7 @@ function App() {
       })
   }, []);
 
-  const pokemonList = kantoPokemon.map(pokemon => {
+  const pokemonList = kantoPokemon.slice(0, visibleCount).map(pokemon => {
     const pokeTypes = pokemon.types.map(typeInfo => {
       const capTypeName = typeInfo.type.name.charAt(0).toUpperCase() + typeInfo.type.name.slice(1);
       return (
@@ -48,11 +49,27 @@ function App() {
     )
   })
 
+  const handleLoadMore = () => {
+    setVisibleCount(prevCount => prevCount + 20);
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
+
   return (
     <main>
       <h1>Pokedex - Kanto</h1>
       <section className="pokemon-cards">
         {pokemonList}
+      </section>
+      
+      <section className="buttons">
+      {visibleCount < kantoPokemon.length && <button onClick={handleLoadMore}>Load More</button>}
+      <button onClick={scrollToTop}>Back to Top</button>
       </section>
     </main>
   )

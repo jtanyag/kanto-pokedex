@@ -9,10 +9,11 @@ body {
 }
 main {
   background-color: #9C9D9E;
+  border-radius: 15px;
   padding: 25px 15px;
 }
 h1 {
-  margin: 0 auto 25px;
+  margin: 0 auto 40px;
   text-align: center;
 }
 .pokemon-cards {
@@ -24,6 +25,7 @@ h1 {
 }
 .pokemon-card {
   background-color: #fbfffe;
+  border-radius: 15px;
   color: #001514;
   width: 300px;
   padding: 15px;
@@ -102,4 +104,20 @@ h1 {
 }
 .pokemon-type.water {
   background-color: #539ae2;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 25px 0;
+}
+.buttons button {
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: inherit;
+  height: 50px;
+  width: 250px;
 }
