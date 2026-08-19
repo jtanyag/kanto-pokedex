@@ -10,7 +10,7 @@ body {
 main {
   background-color: #9C9D9E;
   border-radius: 15px;
-  padding: 25px 15px;
+  padding: 35px 20px;
 }
 h1 {
   margin: 0 auto 40px;
@@ -21,18 +21,19 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: stretch;
-  gap: 15px;
+  gap: 20px;
 }
 .pokemon-card {
   background-color: #fbfffe;
   border-radius: 15px;
   color: #001514;
-  width: 300px;
+  font-size: 0.75rem;
+  width: 150px;
   padding: 15px;
 }
 .pokemon-image img {
   object-fit: contain;
-  height: 100px;
+  height: 50px;
   width: 100%;
 }
 .pokemon-types {

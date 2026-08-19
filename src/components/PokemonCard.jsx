@@ -11,7 +11,7 @@ function PokemonCard(props) {
 
   return (
     <div key={props.pokemon.id} className="pokemon-card">
-      <p>#{props.pokemon.id} {capName}</p>
+      <p>#{props.pokemon.id}<br />{capName}</p>
       <div className="pokemon-image">
         <img src={props.pokemon.image} alt={capName} width="" height="" />
       </div>
