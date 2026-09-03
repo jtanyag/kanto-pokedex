@@ -1,16 +1,44 @@
-# React + Vite
+# Kanto Pokedex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React Pokedex app featuring the original 151 Pokemon. Users can browse Pokemon and view dynamically loaded Pokemon info using data from the PokeAPI.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Not yet deployed
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Browse Pokemon
+- Dynamically retrieve Pokemon data from PokeAPI
+- Display Pokemon images and attributes
+- Responsive interface
+- Reusable React components
 
-## Expanding the ESLint configuration
+## Technologies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- JavaScript
+- Vite
+- Tailwind CSS
+- DaisyUI
+- CSS
+- REST API
+
+## What I Built
+
+- Reusable React components
+- Integrated PokeAPI to fetch and display dynamic Pokemon information
+- Used React state and hooks to manage API response and UI updates
+- Designed a responsive interface that adapts to different screen sizes
+
+## What I Learned
+
+This project strengthened my understanding of building React apps that consume external APIs and render dynamic data. I gained additional experience with component-based architecture, React state management, async API requests, and creating reusable UI patterns. I also gained hands-on experience with Tailwind CSS by replacing traditional CSS styling with Tailwind utility classes to build the app's responsive UI.
+
+## Future Improvements
+
+- Add search feature
+- Add individual Pokemon details pages
+- Add filtering by Pokemon type
+- Add loading and error states for API requests
+- Add accessibility improvements
