@@ -2,7 +2,7 @@ function PokemonCard(props) {
   const pokeTypes = props.pokemon.types.map(typeInfo => {
     const capTypeName = typeInfo.type.name.charAt(0).toUpperCase() + typeInfo.type.name.slice(1);
     return (
-      <span key={capTypeName} className={`pokemon-type ${typeInfo.type.name} rounded-md text-center w-[125px] p-1`}>
+      <span key={capTypeName} className={`pokemon-type ${typeInfo.type.name} rounded-md text-center w-31.25 p-1`}>
         {capTypeName}
       </span>
     )
