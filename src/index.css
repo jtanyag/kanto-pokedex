@@ -1,55 +1,10 @@
-* {
-  box-sizing: border-box;
-}
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: retro;
+};
+
 body {
-  background-color: #e61e06;
   font-family: 'Press Start 2P', sans-serif;
-  margin: 0;
-  padding: 30px;
-}
-main {
-  background-color: #9C9D9E;
-  border-radius: 15px;
-  padding: 35px 20px;
-}
-h1 {
-  margin: 0 auto 40px;
-  text-align: center;
-}
-.pokemon-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: stretch;
-  gap: 20px;
-}
-.pokemon-card {
-  background-color: #fbfffe;
-  border-radius: 15px;
-  color: #001514;
-  font-size: 0.75rem;
-  width: 150px;
-  padding: 15px;
-}
-.pokemon-image img {
-  object-fit: contain;
-  height: 50px;
-  width: 100%;
-}
-.pokemon-types {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5px;
-  margin-top: 5px;
-}
-.pokemon-type {
-  border-radius: 4px;
-  color: #000;
-  min-width: 125px;
-  padding: 5px;
-  text-align: center;
 }
 .pokemon-type.bug {
   background-color: #94bc4a;
@@ -105,20 +60,4 @@ h1 {
 }
 .pokemon-type.water {
   background-color: #539ae2;
-}
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  padding: 25px 0;
-}
-.buttons button {
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  font-family: inherit;
-  height: 50px;
-  width: 250px;
 }

@@ -33,8 +33,8 @@ function App() {
   }
 
   return (
-    <main>
-      <h1>Pokedex - Kanto</h1>
+    <main className="h-screen py-10 px-6">
+      <h1 className="text-4xl text-center mb-8">Pokedex - Kanto</h1>
       <PokemonCardContainer
         pokemonList={kantoPokemon.slice(0, visibleCount)}
       />

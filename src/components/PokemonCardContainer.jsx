@@ -2,7 +2,7 @@ import PokemonCard from "./PokemonCard"
 
 function PokemonCardContainer(props) {
   return (
-    <section className="pokemon-cards">
+    <section className="pokemon-cards bg-neutral p-8 rounded-md flex flex-wrap justify-center gap-4 max-w-7xl mx-auto">
       {props.pokemonList.map(pokemon => (
         <PokemonCard
           key={pokemon.id}
