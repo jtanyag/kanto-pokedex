@@ -4,7 +4,6 @@ import Buttons from './components/Buttons'
 
 function App() {
   const [kantoPokemon, setKantoPokemon] = useState([]);
-  const [visibleCount, setVisibleCount] = useState(20);
   const [loading, isLoading] = useState(true);
 
   useEffect(() => {
@@ -34,22 +33,18 @@ function App() {
     fetchPokemon();
   }, []);
 
-  const handleLoadMore = () => {
-    setVisibleCount(prevCount => prevCount + 20);
-  }
 
   return (
     <main className="min-h-screen py-10 px-6">
       <h1 className="text-4xl text-center mb-8">Pokedex - Kanto</h1>
+
       <PokemonCardContainer
-        pokemonList={kantoPokemon.slice(0, visibleCount)}
+        pokemonList={kantoPokemon}
         loading={loading}
       />
 
       <Buttons
-        visibleCount={visibleCount}
         totalPokemon={kantoPokemon.length}
-        handleLoadMore={handleLoadMore}
       />
     </main>
   )
