@@ -9,6 +9,7 @@ Not yet deployed
 ## Features
 
 - Browse Pokemon
+- Search Pokemon by name
 - Dynamically retrieve Pokemon data from PokeAPI
 - Display Pokemon images and attributes
 - Responsive interface
@@ -30,6 +31,7 @@ Not yet deployed
 - Integrated PokeAPI to fetch and display dynamic Pokemon information
 - Used React state and hooks to manage API response and UI updates
 - Designed a responsive interface that adapts to different screen sizes
+- Added search feature
 
 ## What I Learned
 
@@ -37,7 +39,6 @@ This project strengthened my understanding of building React apps that consume e
 
 ## Future Improvements
 
-- Add search feature
 - Add individual Pokemon details pages
 - Add filtering by Pokemon type
 - Add error state for API requests

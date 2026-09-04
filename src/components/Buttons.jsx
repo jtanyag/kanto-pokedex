@@ -1,4 +1,4 @@
-function Buttons(props) {
+function Buttons() {
 
   const scrollToTop = () => {
     window.scrollTo({

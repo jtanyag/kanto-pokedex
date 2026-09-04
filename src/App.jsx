@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import PokemonCardContainer from './components/PokemonCardContainer';
 import Buttons from './components/Buttons'
+import Search from './components/Search';
 
 function App() {
   const [kantoPokemon, setKantoPokemon] = useState([]);
   const [loading, isLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -33,19 +35,26 @@ function App() {
     fetchPokemon();
   }, []);
 
+  const filteredPokemon = kantoPokemon.filter(pokemon => {
+     return pokemon.name.toLowerCase().includes(searchTerm.toLowerCase());
+  })
+
 
   return (
     <main className="min-h-screen py-10 px-6">
       <h1 className="text-4xl text-center mb-8">Pokedex - Kanto</h1>
 
+      <Search
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
+
       <PokemonCardContainer
-        pokemonList={kantoPokemon}
+        pokemonList={filteredPokemon}
         loading={loading}
       />
 
-      <Buttons
-        totalPokemon={kantoPokemon.length}
-      />
+      <Buttons />
     </main>
   )
 }
