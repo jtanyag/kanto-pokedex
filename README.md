@@ -40,5 +40,5 @@ This project strengthened my understanding of building React apps that consume e
 - Add search feature
 - Add individual Pokemon details pages
 - Add filtering by Pokemon type
-- Add loading and error states for API requests
+- Add error state for API requests
 - Add accessibility improvements
