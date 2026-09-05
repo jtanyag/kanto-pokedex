@@ -4,7 +4,7 @@ A React Pokedex app featuring the original 151 Pokemon. Users can browse Pokemon
 
 ## Live Demo
 
-Not yet deployed
+https://kanto-pokedex-wn78.onrender.com/
 
 ## Features
 
