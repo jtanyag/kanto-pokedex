@@ -1,3 +1,5 @@
+import { Link } from 'react-router'
+
 function PokemonCard({pokemon}) {
   const {types, name, id, image} = pokemon;
 
@@ -12,13 +14,16 @@ function PokemonCard({pokemon}) {
   const capName = name.charAt(0).toUpperCase() + name.slice(1);
 
   return (
-    <div className="pokemon-card bg-zinc-100 rounded-md text-xs w-40 p-4">
+    <Link
+      to={`/pokemon-details/${id}/`}
+      className="pokemon-card bg-zinc-100 rounded-md text-xs w-40 p-4"
+    >
       <p>#{id}<br />{capName}</p>
       <div className="pokemon-image">
         <img src={image} alt={capName} width="" height="" className="h-12.5 object-contain w-full" />
       </div>
       <p>Type(s): <span className="pokemon-types flex flex-col justify-center items-center gap-2 mt-2 text-neutral-700">{pokeTypes}</span></p>
-    </div>
+    </Link>
   )
 }
 
