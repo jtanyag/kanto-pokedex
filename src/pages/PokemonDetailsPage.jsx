@@ -27,9 +27,44 @@ const PokemonDetailsPage = () => {
       <div className="text-center">Loading....</div>
     )
   }
+    
+  const capName = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+  const pokeTypes = pokemon.types.map(typeInfo => {
+    const capTypeName = typeInfo.type.name.charAt(0).toUpperCase() + typeInfo.type.name.slice(1);
+    return (
+      <span key={capTypeName} className={`pokemon-type ${typeInfo.type.name} rounded-md text-center w-31.25 p-1`}>
+        {capTypeName}
+      </span>
+    )
+  })
+  const baseStats = pokemon.stats.map(stat => {
+    return (
+      <div className="base-stat flex justify-between">
+        <span className="base-stat-name">{stat.stat.name}</span>
+        <span className="base-stat-value">{stat.base_stat}</span>
+      </div>
+    )
+  })
 
   return (
-    <div>{pokemon.name}</div>
+    <section className="flex flex-wrap gap-2">
+      <section className="pokemon-main card rounded-md bg-white p-4 w-full flex flex-col gap-2">
+        <h2 className="text-2xl text-center">#{pokemon.id} {capName}</h2>
+        <img src={pokemon.sprites.other["official-artwork"].front_default} alt={capName} className="w-1/2 mx-auto" />
+        <div className="specs grid grid-cols-2 gap-2">
+          <div className="measurements flex flex-col gap-2 text-sm">
+            <span>Height: {pokemon.height}</span>
+            <span>Weight: {pokemon.weight}</span>
+          </div>
+          <div className="type text-sm">Type(s): <span className="flex flex-wrap gap-2">{pokeTypes}</span></div>
+        </div>
+      </section>
+
+      <section className="pokemon-stats card rounded-md bg-white p-4 w-full">
+        <h3 className="text-xl text-center mb-2">Base Stats</h3>
+        {baseStats}
+      </section>
+    </section>
   )
 }
 
