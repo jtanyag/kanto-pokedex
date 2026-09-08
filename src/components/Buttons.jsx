@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router'
 
-function Buttons() {
+const Buttons = () => {
   const navigate = useNavigate();
   
   const scrollToTop = () => {

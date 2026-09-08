@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage'
 import PokemonDetailsPage from './pages/PokemonDetailsPage'
 import Buttons from './components/Buttons'
 
-function App() {
+const App = () => {
   return (
     <main className="min-h-screen py-10 px-6 relative">
       <h1 className="text-4xl text-center mb-8">Pokedex - Kanto</h1>

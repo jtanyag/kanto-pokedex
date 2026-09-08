@@ -1,6 +1,6 @@
 import PokemonCard from "./PokemonCard"
 
-function PokemonCardContainer({loading, pokemonList}) {
+const PokemonCardContainer = ({loading, pokemonList}) => {
   if (loading) {
     return (
       <div className="text-center">Loading....</div>

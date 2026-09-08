@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 
-function PokemonCard({pokemon}) {
+const PokemonCard = ({pokemon}) => {
   const {types, name, id, image} = pokemon;
 
   const pokeTypes = types.map(typeInfo => {
