@@ -14,6 +14,7 @@ https://kanto-pokedex-wn78.onrender.com/
 - Display Pokemon images and attributes
 - Responsive interface
 - Reusable React components
+- Individual Pokemon details page
 
 ## Technologies
 
@@ -32,6 +33,7 @@ https://kanto-pokedex-wn78.onrender.com/
 - Used React state and hooks to manage API response and UI updates
 - Designed a responsive interface that adapts to different screen sizes
 - Added search feature
+- View more details on Pokemon Details Page
 
 ## What I Learned
 
@@ -39,7 +41,6 @@ This project strengthened my understanding of building React apps that consume e
 
 ## Future Improvements
 
-- Add individual Pokemon details pages
 - Add filtering by Pokemon type
 - Add error state for API requests
 - Add accessibility improvements
