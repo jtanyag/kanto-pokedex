@@ -27,25 +27,10 @@ const PokemonDetailsPage = () => {
       <div className="text-center">Loading....</div>
     )
   }
-    
-  const capName = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-  const pokeTypes = pokemon.types.map(typeInfo => {
-    const capTypeName = typeInfo.type.name.charAt(0).toUpperCase() + typeInfo.type.name.slice(1);
-    return (
-      <span key={capTypeName} className={`pokemon-type ${typeInfo.type.name} rounded-md text-center w-31.25 p-1`}>
-        {capTypeName}
-      </span>
-    )
-  })
-  const baseStats = pokemon.stats.map(stat => {
-    return (
-      <div className="base-stat flex justify-between">
-        <span className="base-stat-name">{stat.stat.name}</span>
-        <span className="base-stat-value">{stat.base_stat}</span>
-      </div>
-    )
-  })
-
+  
+  const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
+  const capName = capitalize(pokemon.name);
+  
   return (
     <section className="flex flex-wrap gap-2">
       <section className="pokemon-main card rounded-md bg-white p-4 w-full flex flex-col gap-2">
@@ -53,16 +38,48 @@ const PokemonDetailsPage = () => {
         <img src={pokemon.sprites.other["official-artwork"].front_default} alt={capName} className="w-1/2 mx-auto" />
         <div className="specs grid grid-cols-2 gap-2">
           <div className="measurements flex flex-col gap-2 text-sm">
-            <span>Height: {pokemon.height}</span>
-            <span>Weight: {pokemon.weight}</span>
+            <span>Height: {pokemon.height / 10}m</span>
+            <span>Weight: {pokemon.weight / 10}kg</span>
           </div>
-          <div className="type text-sm">Type(s): <span className="flex flex-wrap gap-2">{pokeTypes}</span></div>
+          <div className="type text-sm">
+            <span>Type(s): </span>
+            <span className="flex flex-wrap gap-2 mt-1">
+              {pokemon.types.map(typeInfo => {
+                const capTypeName = typeInfo.type.name.charAt(0).toUpperCase() + typeInfo.type.name.slice(1);
+                return (
+                  <span key={capTypeName} className={`pokemon-type ${typeInfo.type.name} rounded-md text-center w-31.25 p-1`}>
+                    {capTypeName}
+                  </span>
+                )
+              })}
+            </span>
+          </div>
         </div>
       </section>
 
       <section className="pokemon-stats card rounded-md bg-white p-4 w-full">
         <h3 className="text-xl text-center mb-2">Base Stats</h3>
-        {baseStats}
+        <div className="base-stats md:grid md:grid-cols-2 gap-x-4 gap-y-2">
+          {pokemon.stats.map(stat => {
+            return (
+              <div className="base-stat flex justify-between" key={stat.stat.name}>
+                <span className="base-stat-name">{capitalize(stat.stat.name)}</span>
+                <span className="base-stat-value">{stat.base_stat}</span>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      <section className="pokemon-moves card rounded-md bg-white p-4 w-full">
+        <h3 className="text-xl text-center mb-2">Moves</h3>
+        <ul className="moves grid gap-4 text-sm sm:grid-cols-2 md:grid-cols-3">
+          {pokemon.moves.map(move => {
+            return (
+              <li key={move.move.name}>{capitalize(move.move.name)}</li>
+            )
+          })}
+        </ul>
       </section>
     </section>
   )
