@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import PokemonCardContainer from '../components/PokemonCardContainer';
-import Buttons from '../components/Buttons'
 import Search from '../components/Search';
 
 const HomePage = () => {
@@ -50,8 +49,6 @@ const HomePage = () => {
         pokemonList={filteredPokemon}
         loading={loading}
       />
-
-      <Buttons />
     </>
   )
 }
