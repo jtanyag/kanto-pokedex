@@ -32,10 +32,10 @@ const PokemonDetailsPage = () => {
   const capName = capitalize(pokemon.name);
   
   return (
-    <section className="flex flex-wrap gap-2">
+    <section className="pokemon-details flex flex-wrap gap-2 max-w-7xl mx-auto">
       <section className="pokemon-main card rounded-md bg-white p-4 w-full flex flex-col gap-2">
         <h2 className="text-2xl text-center">#{pokemon.id} {capName}</h2>
-        <img src={pokemon.sprites.other["official-artwork"].front_default} alt={capName} className="w-1/2 mx-auto" />
+        <img src={pokemon.sprites.other["official-artwork"].front_default} alt={capName} className="w-1/2 max-w-37.5 mx-auto" />
         <div className="specs grid grid-cols-2 gap-2">
           <div className="measurements flex flex-col gap-2 text-sm">
             <span>Height: {pokemon.height / 10}m</span>
@@ -73,7 +73,7 @@ const PokemonDetailsPage = () => {
 
       <section className="pokemon-moves card rounded-md bg-white p-4 w-full">
         <h3 className="text-xl text-center mb-2">Moves</h3>
-        <ul className="moves grid gap-4 text-sm sm:grid-cols-2 md:grid-cols-3">
+        <ul className="moves grid gap-4 text-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {pokemon.moves.map(move => {
             return (
               <li key={move.move.name}>{capitalize(move.move.name)}</li>
